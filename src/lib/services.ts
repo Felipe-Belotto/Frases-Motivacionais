@@ -1,7 +1,9 @@
+import { Quote } from "./types";
+
 export async function fetchQuote() {
   // fetch json data from file
   const res = await fetch('../../data/quotes.json');
-  const quotes = await res.json();
+  const quotes: Quote[] = await res.json();
   // pick a random quote
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
 

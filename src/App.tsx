@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { fetchQuote, fetchRandomColor } from './lib/services';
 import QuoteCard from './components/QuoteCard';
+import { Quote } from './lib/types';
 
 function App() {
-  const [quote, setQuote] = useState(null);
+  const [quote, setQuote] = useState<Quote | null>(null);
   const [bgColor, setBgColor] = useState('#666');
 
   async function handleClick() {
     const quote = await fetchQuote();
     const color = await fetchRandomColor();
+     
     setQuote(quote);
     setBgColor(color.hex);
   }
@@ -17,7 +19,7 @@ function App() {
     <main className="w-full min-h-screen " style={{ backgroundColor: bgColor }}>
       <section className="container px-10 py-20 mx-auto text-center">
         <div className="w-full max-w-4xl px-10 py-6 mx-auto bg-white border-2 border-white rounded-lg bg-opacity-15 ">
-          <h1 className="font-bold brightness-50 text-7xl font-display" style={{color: bgColor}}>
+          <h1 className="font-bold brightness-50 text-4xl md:text-7xl font-display " style={{color: bgColor}}>
             Frases Motivacionais
           </h1>
           <button
