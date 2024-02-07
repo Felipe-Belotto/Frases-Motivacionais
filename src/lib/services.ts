@@ -12,10 +12,8 @@ export async function fetchQuote() {
 }
 
 export async function fetchRandomColor() {
-  // fetch json data from file
   const res = await fetch('../../data/colors.json');
-  const colors = await res.json();
-  // pick a random color
+  const colors: {name: string, hex: string}[] = await res.json();
   const color = colors[Math.floor(Math.random() * colors.length)];
 
   return color;
