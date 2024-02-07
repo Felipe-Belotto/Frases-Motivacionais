@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <main className="w-full min-h-screen " style={{ backgroundColor: bgColor }}>
+    <main className="w-full md:min-h-screen " style={{ backgroundColor: bgColor }}>
       <section className="container px-4 py-1 md:py-20 mx-auto text-center">
       
         <HeaderCard setBgColor={setBgColor} handleClick={handleClick} bgColor={bgColor} />
