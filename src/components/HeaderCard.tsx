@@ -22,8 +22,8 @@ export default function HeaderCard({handleClick, bgColor, setBgColor}: HeaderCar
   }, [])
 
   return (
-    <div className="w-full max-w-4xl flex  flex-col gap-7 px-10 py-6 mx-auto bg-white border-2 border-white rounded-lg bg-opacity-15 ">
-    <h1 className="font-bold brightness-50 text-4xl md:text-7xl font-display " style={{color: bgColor}}>
+    <div className="w-full max-w-4xl flex  flex-col gap-7 px-10 py-6 mx-auto bg-white border-2 border-white rounded-lg bg-opacity-20 ">
+    <h1 className="font-bold text-zinc-900 text-4xl md:text-7xl font-display opacity-70 ">
       Frases Motivacionais
     </h1>
     
@@ -38,8 +38,8 @@ export default function HeaderCard({handleClick, bgColor, setBgColor}: HeaderCar
       Trocar a cor
     </Button>
 
-    <div>
-    <label htmlFor="color-changer" className=" px-4 py-2 font-bold text-white bg-transparent bg-gray-800 border-2 border-white rounded bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" >
+    <div className="w-full" >
+    <label htmlFor="color-changer" className="flex justify-center w-full px-4 py-2 font-bold text-white bg-gray-800 border-2 border-white rounded bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" >
     <span>Escolha uma cor</span>
 
     <input onChange={(e : React.ChangeEvent<HTMLInputElement>) => setBgColor(e.currentTarget.value)} id="color-changer" name="color-changer" type="color" value={bgColor} className="w-0 h-0" />
